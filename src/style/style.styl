@@ -1,0 +1,38 @@
+color = {
+  grey : #2c2c32
+  gold : #e4b76a
+}
+
+screen = {
+  S: 480px
+  M: 768px
+  ML: 960px
+  L: 1170px
+  XL: 1440px
+}
+
+padding = {
+  S: 8px
+  M: 16px
+  ML: 20px
+  L: 30px
+  XL: 40px
+}
+
+for key, value in color
+  .bg--{key}
+    background-color value
+  .tx--{key}
+    color value
+
+remify(size)
+  val = size / (size * 0 + 1)
+  ((val) / 16)rem
+
+font-size(size)
+  font-size size
+  val = size / (size * 0 + 1)
+  font-size ((val) / 16)rem
+
+@import 'base.styl'
+@import 'header.styl'

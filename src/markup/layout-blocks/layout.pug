@@ -1,0 +1,14 @@
+html(lang="en-us")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    title= "Holding Financial Capital"
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0")
+    meta(name="description", content= description)
+    link(rel="stylesheet", href=`css/${styleName}.css`)
+  body.bg--lilac.tx--white.tx--center
+    include header
+    block content
+    include footer
+  
+  script( src=`js/${scriptName}.js`)

@@ -1,0 +1,46 @@
+@font-face 
+  font-family: PFDinDisplayPro
+  src:
+    url("../fonts/PFDinDisplayPro-Med.otf") format("opentype")
+
+@font-face 
+  font-family: Garamond-Book
+  src:
+    url("../fonts/Garamond-Book.otf") format("opentype")
+
+*
+  margin: 0;
+  padding: 0;
+
+body
+  font-family: PFDinDisplayPro;
+  margin 0
+  padding 0
+  width: 100vw
+  height: 100vh
+  background-color: color.grey
+  color: color.gold
+
+a
+  text-decoration none
+
+.container
+  box-sizing: border-box;
+  outline: 1px solid color.gold
+
+  @media (max-width: screen.XL)
+    outline-offset: -(padding.XL)
+    padding: padding.XL
+  @media (max-width: screen.L)
+    outline-offset: -(padding.L)
+    padding: padding.L
+  @media (max-width: screen.ML)
+    outline-offset: -(padding.ML)
+    padding: padding.ML
+  @media (max-width: screen.M)
+    outline-offset: -(padding.M)
+    padding: padding.M
+  @media (max-width: screen.S)
+    outline-offset: -(padding.S)
+    padding: padding.S
+
