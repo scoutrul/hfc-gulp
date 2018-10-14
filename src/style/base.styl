@@ -4,43 +4,107 @@
     url("../fonts/PFDinDisplayPro-Med.otf") format("opentype")
 
 @font-face 
-  font-family: Garamond-Book
+  font-family: GaramondBook
   src:
     url("../fonts/Garamond-Book.otf") format("opentype")
+
+:root
+  @media (min-width: screen.L)
+    --outlineOffset: -(padding.XL)
+    --padding: padding.XL
+    --sectionPadding: 100
+  @media (max-width: screen.L)
+    --outlineOffset: -(padding.L)
+    --padding: padding.L
+    --sectionPadding: 80
+  @media (max-width: screen.ML)
+    --outlineOffset: -(padding.ML)
+    --padding: padding.ML
+    --sectionPadding: 60
+  @media (max-width: screen.M)
+    --outlineOffset: -(padding.M)
+    --padding: padding.M
+    --sectionPadding: 40
+  @media (max-width: screen.S)
+    --outlineOffset: -(padding.S)
+    --padding: padding.S
+    --sectionPadding: 40
 
 *
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  line-height: 100%
 
 body
-  font-family: PFDinDisplayPro;
+  font-family: GaramondBook;
+  font-size(18px)
+  letter-spacing: 0.034em;
   margin 0
   padding 0
-  width: 100vw
-  height: 100vh
+  width: 100%
+  height: 100%
   background-color: color.grey
   color: color.gold
+  overflow-x: hidden
+  line-height: 135%;
 
 a
   text-decoration none
 
+h1
+  text-align center
+  padding 100px 0
+  font-size(36px)
+  text-transform uppercase
+h2
+  text-align center
+  padding 10px 0
+  font-size(28px)
+h3
+  text-align center
+  padding 10px 0
+  font-size(24px)
+h4
+  text-align center
+  padding 10px 0
+  font-size(18px)
+
+section 
+  width 100%
+  padding: var(--sectionPadding) 0
+  &.bgImage
+    min-height: 100vh
+    display: flex
+    background-size: cover
+    background-position: center;
+  &#slogan
+    .container
+      margin: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
 .container
-  box-sizing: border-box;
-  outline: 1px solid color.gold
+  outline: 0px solid color.gold
+  width: 100%
+  max-width: screen.L
+  margin: 0 auto
+  outline-offset: var(--outlineOffset)
+  padding: var(--padding)
 
-  @media (max-width: screen.XL)
-    outline-offset: -(padding.XL)
-    padding: padding.XL
-  @media (max-width: screen.L)
-    outline-offset: -(padding.L)
-    padding: padding.L
-  @media (max-width: screen.ML)
-    outline-offset: -(padding.ML)
-    padding: padding.ML
-  @media (max-width: screen.M)
-    outline-offset: -(padding.M)
-    padding: padding.M
-  @media (max-width: screen.S)
-    outline-offset: -(padding.S)
-    padding: padding.S
-
+  .img
+    text-align center
+    padding 0 0 100px 0
+    img
+      transform: scale(2);
+  
+  .content
+    max-width: 600px;
+    margin: auto;
+    line-height: 170%;
+    p
+      margin: 10px 0
+      text-indent: 20px;
+      text-align justify

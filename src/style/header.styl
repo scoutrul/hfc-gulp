@@ -1,25 +1,22 @@
 section#header 
     .container
-        height 100vh
         display flex
         flex-flow column nowrap
         justify-content center
 
-
-#logo {
+#logo
     width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: flex-end;
-}
-
-#logo img {
-    width: 100%;
-    margin: 0 auto;
     max-width: 640px;
-}
+    img
+        width: auto
+        max-width: 100%;
+        margin: 0 auto;
+    
 
-#nav {
+#nav 
     z-index: 1;
     display: flex;
     align-items: center;
@@ -28,33 +25,31 @@ section#header
     margin: 0 auto;
     padding: 20px 0 0;
     width: 100%;
-}
-#nav li {
-    display: flex;
-    justify-content: center;
-}
-#nav li.devider {
-    width: 100%;
-    max-width: 24px;
-}
-#nav li.devider span {
-    display: block;
-    border-radius: 50%;
-    width: 6px;
-    height: 6px;
-    background-color: #e4b76a;
-}
-
-#nav li a {
-    color: #e4b76a;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: (12px);
-    transition: .5s ease;
-    letter-spacing: 3px;
-    padding: 10px 0;
-}
+    li 
+        display: flex;
+        justify-content: center;
+        color: color.gold;
+        font-family PFDinDisplayPro
+        font-size(24px)
+        text-transform uppercase
+        &.devider 
+            width: 100%;
+            max-width: 24px;
+            span
+                display: block;
+                border-radius: 50%;
+                width: 6px;
+                height: 6px;
+                background-color: color.gold;
+        a 
+            color: inherit
+            font-size(24px)
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: .5s ease;
+            letter-spacing: 3px;
+            padding: 10px 0;
 
 #nav li a:hover, #nav li a:active, #nav li a.active {
-    color: #55565a;
+    color: white;
 }

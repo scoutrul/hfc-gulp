@@ -1,6 +1,8 @@
 color = {
-  grey : #2c2c32
-  gold : #e4b76a
+  grey : #555459
+  gold : #ecbd7c
+  // grey : rgba(85, 86, 90, 1) original rgba
+  // gold : rgba(228, 175, 106, 1) original rgba
 }
 
 screen = {
@@ -12,11 +14,11 @@ screen = {
 }
 
 padding = {
-  S: 8px
-  M: 16px
-  ML: 20px
-  L: 30px
-  XL: 40px
+  S: 10
+  M: 20
+  ML: 30
+  L: 40
+  XL: 60
 }
 
 for key, value in color
@@ -36,3 +38,4 @@ font-size(size)
 
 @import 'base.styl'
 @import 'header.styl'
+@import 'footer.styl'
