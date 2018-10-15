@@ -21,17 +21,20 @@ section#header
     display: flex;
     align-items: center;
     justify-content: space-around;
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 20px 0 0;
+    max-width: 200px;
+    margin: 15px auto 0 auto;
     width: 100%;
+    &.full {
+        max-width: 440px
+    }
     li 
         display: flex;
         justify-content: center;
         color: color.gold;
         font-family PFDinDisplayPro
-        font-size(20)
+        font-size(22)
         text-transform uppercase
+        letter-spacing: 3px;
         @media (max-width: screen.M)
             font-size(12)
         &.devider 
