@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Tinos');
 @font-face 
   font-family: PFDinDisplayPro
   src:
     url("../fonts/PFDinDisplayPro-Med.otf") format("opentype")
 
 @font-face 
-  font-family: GaramondBook
+  font-family: Garamond-Book
   src:
     url("../fonts/Garamond-Book.otf") format("opentype")
+
 
 :root
   @media (min-width: screen.L)
@@ -36,7 +38,7 @@
   box-sizing: border-box;
 
 body
-  font-family: GaramondBook;
+  font-family: 'Garamond-Book', serif;
   font-size(18px)
   letter-spacing: 0.034em;
   margin 0
@@ -47,6 +49,8 @@ body
   color: color.gold
   overflow-x: hidden
   line-height: 135%;
+.rus
+  font-family: 'Tinos', serif;
 
 a
   text-decoration none
@@ -55,6 +59,8 @@ h1
   text-align center
   padding 100px 0
   font-size(36px)
+  @media (max-width: screen.S)
+    font-size(28px)
   text-transform uppercase
   line-height 125%
 h2
