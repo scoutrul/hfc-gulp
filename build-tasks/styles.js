@@ -23,34 +23,24 @@ const compileStyles = () =>
     .pipe(plugins.concat(gConfig.pkg.name + '.styl'))
     .pipe(plugins.stylus())
     .pipe(plugins.prefix(opts.prefix))
-    .pipe(
-      env.deploy
-        ? noop()
-        : gulp.dest(dest.css)
-    )
+    .pipe(env.deploy ? noop() : gulp.dest(dest.css))
     .pipe(env.deploy || env.dist ? plugins.minify() : noop())
-    .pipe(
-      env.deploy || env.dist
-        ? plugins.rename(opts.rename)
-        : noop()
-    )
-    .pipe(
-      env.deploy || env.dist
-        ? gulp.dest(dest.css)
-        : noop()
-    )
-compileStyles.description = `concatenate and compile style source(${src.styles.all}) using stylus before autoprefixing and minifying`
+    .pipe(env.deploy || env.dist ? plugins.rename(opts.rename) : noop())
+    .pipe(env.deploy || env.dist ? gulp.dest(dest.css) : noop())
+compileStyles.description = `concatenate and compile style source(${
+  src.styles.all
+}) using stylus before autoprefixing and minifying`
 compileStyles.flags = {
-  '--deploy': `only create minified output in the deployment directory ${dest.css}`,
+  '--deploy': `only create minified output in the deployment directory ${
+    dest.css
+  }`,
   '--dist': `output both un-minified and minified styles to dist directory`,
 }
 
 const watchStyles = () =>
   gulp.watch(src.styles.all, gulp.series(lintStyles, compileStyles))
-watchStyles.description = `watch for style source(${src.styles.all}) changes and lint then compile on change`
+watchStyles.description = `watch for style source(${
+  src.styles.all
+}) changes and lint then compile on change`
 
-export {
-  compileStyles,
-  lintStyles,
-  watchStyles,
-}
+export { compileStyles, lintStyles, watchStyles }

@@ -11,24 +11,24 @@ const src = gConfig.paths.sources
 const dest = gConfig.paths.destinations
 
 /**
-  * creates local static livereload server using browsersync
-*/
+ * creates local static livereload server using browsersync
+ */
 const startServer = () => {
   const server = browsersync.create()
   server.init(opts.browserSync)
   return server.watch(src.overwatch, (evt, file) => {
     if (evt === 'change' && file.indexOf('.css') === -1) server.reload()
     if (evt === 'change' && file.indexOf('.css') !== -1)
-      vf
-        .readSync(file)
+      vf.readSync(file)
         .pipe(vss(file))
         .pipe(vb())
         .pipe(server.stream())
   })
 }
-const compile = (cb) => compileAllSource(cb)
+const compile = cb => compileAllSource(cb)
 const serve = gulp.series(compile, startServer)
-serve.description = `creates a Browsersync instance that serves content from ${opts
-  .browserSync.server.baseDir} providing live reload and style injection`
+serve.description = `creates a Browsersync instance that serves content from ${
+  opts.browserSync.server.baseDir
+} providing live reload and style injection`
 
 export { serve }

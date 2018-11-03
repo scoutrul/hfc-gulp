@@ -22,11 +22,7 @@ const lintScripts = () => {
 lintScripts.description = `lint script source(${src.scripts.all}) using eslint`
 
 const compileScripts = async function() {
-
-  const plugins = [
-    resolve(),
-    babel({ exclude: 'node_modules/**' }),
-  ]
+  const plugins = [resolve(), babel({ exclude: 'node_modules/**' })]
 
   if (env.mapped || env.deploy) plugins.push(uglify())
 
@@ -56,7 +52,9 @@ const compileScripts = async function() {
     })
   }
 }
-compileScripts.description = `compile script source(${src.scripts.all}) using babel before concatenating and safety wrapping output`
+compileScripts.description = `compile script source(${
+  src.scripts.all
+}) using babel before concatenating and safety wrapping output`
 compileScripts.flags = {
   '--mapped': 'create source maps for scripts',
   '--deploy': `minify scripts output for deployment from ${dest.js}`,
@@ -65,10 +63,8 @@ compileScripts.flags = {
 
 const watchScripts = () =>
   gulp.watch(src.scripts.all, gulp.series(lintScripts, compileScripts))
-watchScripts.description = `watch for script source(${src.scripts.all}) changes and lint then compile on change`
+watchScripts.description = `watch for script source(${
+  src.scripts.all
+}) changes and lint then compile on change`
 
-export {
-  compileScripts,
-  lintScripts,
-  watchScripts,
-}
+export { compileScripts, lintScripts, watchScripts }
