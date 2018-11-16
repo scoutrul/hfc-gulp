@@ -170,6 +170,12 @@ section#slogan .container {
   text-indent: 20px;
   text-align: justify;
 }
+@media (max-width: 480px) {
+  .container .content p {
+    text-align: left;
+    text-indent: 0;
+  }
+}
 .logosvg {
   max-width: 640px;
 }
